@@ -3,11 +3,11 @@
 ```docker
 docker build -t hello-world .
 
-docker run --name web-app python-example
+docker run --name hello hello-world
 ```
 
 To remove stopped container use --rm option:
 
 ```
-docker run --rm --name web-app python-example
+docker run --rm --name hello hello-world
 ```
