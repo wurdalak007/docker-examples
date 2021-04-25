@@ -1,9 +1,9 @@
-# The simpliest dockerfile
+# The simplest dockerfile
 
 To see containers
 
 ```docker
-docker ps -- launched cantainers
+docker ps -- launched containers
 
 docker ps -a -- all containers
 
