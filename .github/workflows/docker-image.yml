@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+
+  hello_world:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Working direcctory
+      run: cd hello_world
+    - name: Build the Docker image
+      run: docker build -t hello-world .
+    - name: Run container
+      run: docker run --name hello hello-world 
