@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Working direcctory
-      run: cd hello_world
-    - name: Build the Docker image
-      run: docker build -t hello-world .
-    - name: Run container
-      run: docker run --name hello hello-world 
+    - name: Build & Run hello world
+      working-directory: ./hello_world
+      run: |
+        cd hello_world
+        docker build -t hello-world .
+        docker run --name hello hello-world 
