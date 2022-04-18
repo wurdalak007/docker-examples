@@ -17,6 +17,16 @@ jobs:
     - name: Build & Run hello world
       working-directory: ./hello_world
       run: |
-        cd hello_world
         docker build -t hello-world .
-        docker run --name hello hello-world 
+        docker run --name hello hello-world
+        
+  app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build & Run Flask App
+      working-directory: ./app
+      run: |
+        docker build -t webapp-image .
+        docker run --name webapp -p 8080:8080 webapp-image
