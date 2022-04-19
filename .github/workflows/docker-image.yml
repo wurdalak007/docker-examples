@@ -29,5 +29,5 @@ jobs:
       working-directory: ./app
       run: |
         docker build -t webapp-image .
-        docker run --name webapp -p 8080:8080 webapp-image
+        docker run -d --name webapp -p 8080:8080 webapp-image
         docker stop -t 10 webapp
